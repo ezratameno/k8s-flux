@@ -7,7 +7,6 @@ metadata:
     nginx.ingress.kubernetes.io/ssl-redirect: "false"
     nginx.ingress.kubernetes.io/use-regex: "true"
     nginx.ingress.kubernetes.io/rewrite-target: /grafana/$2
-    nginx.ingress.kubernetes.io/app-root: /grafana
 spec:
   ingressClassName: nginx
   rules:
