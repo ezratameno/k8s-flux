@@ -5,15 +5,15 @@ metadata:
   annotations:
     ingress.kubernetes.io/ssl-redirect: "false"
     nginx.ingress.kubernetes.io/ssl-redirect: "false"
-    nginx.ingress.kubernetes.io/use-regex: "true"
-    nginx.ingress.kubernetes.io/rewrite-target: /grafana/$2
+    nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
   ingressClassName: nginx
   rules:
-  - http:
+  - host: api.example.com
+    http:
       paths:
       # TODO: add prometheus also
-      - path: /grafana(/|$)(.*)
+      - path: /
         pathType: Prefix
         backend:
           service:
