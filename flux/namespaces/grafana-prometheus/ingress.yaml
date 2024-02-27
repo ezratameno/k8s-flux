@@ -6,7 +6,7 @@ metadata:
     ingress.kubernetes.io/ssl-redirect: "false"
     nginx.ingress.kubernetes.io/ssl-redirect: "false"
     # ingress.kubernetes.io/rewrite-target: /
-    nginx.ingress.kubernetes.io/rewrite-target: /grafana
+    nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
   ingressClassName: nginx
   rules:
@@ -14,7 +14,7 @@ spec:
       paths:
       # TODO: add prometheus also
       - path: /grafana
-        pathType: Exact
+        pathType: ImplementationSpecific
         backend:
           service:
            name: prometheus-community-grafana
