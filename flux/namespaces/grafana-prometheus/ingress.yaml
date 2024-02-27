@@ -13,8 +13,8 @@ spec:
   - http:
       paths:
       # TODO: add prometheus also
-      - path: /
-        pathType: Prefix
+      - path: /grafana
+        pathType: Exact
         backend:
           service:
            name: prometheus-community-grafana
