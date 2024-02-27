@@ -15,6 +15,6 @@ spec:
         pathType: ImplementationSpecific
         backend:
           service:
-           name: prometheus-community-grafana
+           name: prometheus-community-kube-prometheus
            port:
-             number: 80
+             number: 9090
