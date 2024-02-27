@@ -14,7 +14,7 @@ spec:
       paths:
       # TODO: add prometheus also
       - path: /grafana
-        pathType: ImplementationSpecific
+        pathType: Prefix
         backend:
           service:
            name: prometheus-community-grafana
