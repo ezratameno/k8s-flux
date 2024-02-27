@@ -11,7 +11,8 @@ spec:
   rules:
   - http:
       paths:
-      - path: /
+      # TODO: add prometheus also
+      - path: /grafana
         pathType: ImplementationSpecific
         backend:
           service:
