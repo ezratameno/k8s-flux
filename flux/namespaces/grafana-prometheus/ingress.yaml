@@ -9,10 +9,10 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
+  # TODO: needed to add entry in the /etc/hosts to point grafana.k8s-infra.mydomain.com to 127.0.01
   - host: grafana.k8s-infra.mydomain.com
     http:
       paths:
-      # TODO: add prometheus also
       - path: /
         pathType: Prefix
         backend:
@@ -20,6 +20,7 @@ spec:
            name: prometheus-community-grafana
            port:
              number: 80
+    # TODO: needed to add entry in the /etc/hosts to point prometheus.k8s-infra.mydomain.com to 127.0.01
   - host: prometheus.k8s-infra.mydomain.com
     http:
       paths:
