@@ -9,7 +9,7 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-  - host: localhost
+  - host: grafana.k8s-infra.mydomain.com
     http:
       paths:
       # TODO: add prometheus also
