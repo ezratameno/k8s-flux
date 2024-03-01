@@ -1,0 +1,30 @@
+---
+apiVersion: source.toolkit.fluxcd.io/v1beta2
+kind: HelmRepository
+metadata:
+  name: jenkins
+spec:
+  interval: 5m
+  url: https://charts.jenkins.io
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta2
+kind: HelmRelease
+metadata:
+  name: jenkins
+spec:
+  interval: 10m
+  timeout: 5m
+  chart:
+    spec:
+      chart: jenkins
+      sourceRef:
+        kind: HelmRepository
+        name: jenkins
+      interval: 5m
+  releaseName: jenkins
+  install:
+    remediation:
+      retries: 3
+  upgrade:
+    remediation:
+      retries: 3
