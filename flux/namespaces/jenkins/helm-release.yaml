@@ -21,8 +21,8 @@ spec:
         kind: HelmRepository
         name: jenkins
       interval: 5m
-  valuesFiles:
-    - values.yaml
+      valuesFiles:
+        - values.yaml
   releaseName: jenkins
   install:
     remediation:
