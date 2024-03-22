@@ -1,0 +1,12 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: grafana-demo
+spec:
+  secretName: grafana-demo
+  issuerRef:
+    kind: ClusterIssuer
+    name: production
+  commonName: grafana.k8s-infra.mydomain.com
+  dnsNames:
+  - grafana.k8s-infra.mydomain.com

@@ -3,6 +3,4 @@ kind: Kustomization
 namespace: grafana-prometheus
 resources:
 - namespace.yaml
-- helm-release.yaml
-- ingress.yaml
-- certificate.yaml
+- issuer.yaml
