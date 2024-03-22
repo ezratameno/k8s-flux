@@ -8,6 +8,13 @@ metadata:
     nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
   ingressClassName: nginx
+  tls:
+  - hosts:
+      - grafana.k8s-infra.mydomain.com
+    
+    # secret that holds the certificate name
+    secretName: grafana-demo
+    
   rules:
   # TODO: needed to add entry in the /etc/hosts to point grafana.k8s-infra.mydomain.com to 127.0.01
   - host: grafana.k8s-infra.mydomain.com
@@ -32,3 +39,4 @@ spec:
            name: prometheus-community-kube-prometheus
            port:
              number: 9090
+  
