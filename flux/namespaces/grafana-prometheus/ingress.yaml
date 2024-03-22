@@ -6,6 +6,10 @@ metadata:
     ingress.kubernetes.io/ssl-redirect: "false"
     nginx.ingress.kubernetes.io/ssl-redirect: "false"
     nginx.ingress.kubernetes.io/rewrite-target: /
+  labels:
+
+    # tells the ingress to use this cluster issuer
+    cert-manager.io/cluster-issuer: production
 spec:
   ingressClassName: nginx
   tls:
@@ -14,7 +18,7 @@ spec:
     
     # secret that holds the certificate name
     secretName: grafana-demo
-    
+
   rules:
   # TODO: needed to add entry in the /etc/hosts to point grafana.k8s-infra.mydomain.com to 127.0.01
   - host: grafana.k8s-infra.mydomain.com
